@@ -1,30 +1,16 @@
 import 'package:flutter/material.dart';
-import 'gallery/category_page.dart';
-import 'gallery/demo_display.dart';
-import 'gallery/demo_input.dart';
-import 'gallery/demo_button.dart';
-import 'gallery/demo_feedback.dart';
-import 'gallery/demo_layout.dart';
 
-class WidgetGallery extends StatelessWidget {
-  const WidgetGallery({super.key});
+class GaleryWidget extends StatelessWidget {
+  const GaleryWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> categories = [
-      {"name": "Display", "icon": Icons.tv, "widget": const DemoDisplay()},
-      {"name": "Input", "icon": Icons.input, "widget": const DemoInput()},
-      {
-        "name": "Button",
-        "icon": Icons.smart_button,
-        "widget": const DemoButton()
-      },
-      {
-        "name": "Feedback",
-        "icon": Icons.feedback,
-        "widget": const DemoFeedback()
-      },
-      {"name": "Layout", "icon": Icons.layers, "widget": const DemoLayout()},
+      {"name": "Display", "icon": Icons.tv},
+      {"name": "Input", "icon": Icons.input},
+      {"name": "Button", "icon": Icons.smart_button},
+      {"name": "Feedback", "icon": Icons.feedback},
+      {"name": "Layout", "icon": Icons.layers},
     ];
 
     return Scaffold(
@@ -41,13 +27,7 @@ class WidgetGallery extends StatelessWidget {
           final cat = categories[index];
           return InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      CategoryPage(name: cat["name"], widget: cat["widget"]),
-                ),
-              );
+              // Navigation logic here
             },
             child: Card(
               color: Colors.blue.shade50,
